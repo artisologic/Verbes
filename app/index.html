@@ -22,7 +22,7 @@
 		<link rel="apple-touch-icon-precomposed" sizes="57x57" href="touch-icons/apple-touch-icon-57x57.png">
 
 		<link rel="stylesheet" href="components/ratchet/dist/ratchet.css">
-		<link rel="stylesheet" href="styles/verbes.css">
+		<link rel="stylesheet" href="styles/main.css">
 	</head>
 
 	<body>
@@ -48,12 +48,12 @@
 
 			<!-- Conjugation exercise -->
 			<section id="conjuguer" class="content-padded segmented-controller-item active">
-				<h2>Être</h2>
+				<h2 data-infinitive>Infinitive</h2>
 				<p>Conjugues à la personne suivante</p>
 
 				<div class="input-group">
 					<div class="input-row">
-						<label>Vous</label>
+						<label data-person>Person</label>
 						<input type="text" placeholder="..." autocapitalize="off" autocorrect="off">
 					</div>
 				</div>
@@ -78,5 +78,7 @@
 
 
 		<script src="components/ratchet/dist/ratchet.js"></script>
+		<script src="scripts/data.js"></script>
+		<script src="scripts/main.js"></script>
 	</body>
 </html>
