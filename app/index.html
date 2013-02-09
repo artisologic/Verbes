@@ -6,21 +6,77 @@
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-		<title></title>
+		<title>Verbes</title>
 		<meta name="description" content="">
-		<meta name="viewport" content="width=device-width">
+
+		<!-- Sets initial viewport load and disables zooming  -->
+		<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+
+		<!-- Makes your prototype chrome-less once bookmarked to your phone's home screen -->
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+		<!-- Set Apple icons for when prototype is saved to home screen -->
+		<link rel="apple-touch-icon-precomposed" sizes="114x114" href="touch-icons/apple-touch-icon-114x114.png">
+		<link rel="apple-touch-icon-precomposed" sizes="72x72" href="touch-icons/apple-touch-icon-72x72.png">
+		<link rel="apple-touch-icon-precomposed" sizes="57x57" href="touch-icons/apple-touch-icon-57x57.png">
 
 		<link rel="stylesheet" href="components/ratchet/dist/ratchet.css">
+		<link rel="stylesheet" href="styles/verbes.css">
 	</head>
 
 	<body>
 
+		<!-- Main title bar -->
 		<header class="bar-title">
 			<h1 class="title">Verbes</h1>
 		</header>
 
+		<!-- Secondary nav -->
+		<nav class="bar-standard bar-header-secondary">
+			<ul class="segmented-controller">
+				<li class="active">
+					<a href="#conjuguer">Conjuguer</a>
+				</li>
+				<li>
+					<a href="#traduire">Traduire</a>
+				</li>
+			</ul>
+		</nav>
+
+		<div class="content">
+
+			<!-- Conjugation exercise -->
+			<section id="conjuguer" class="content-padded segmented-controller-item active">
+				<h2>Être</h2>
+				<p>Conjugues à la personne suivante</p>
+
+				<div class="input-group">
+					<div class="input-row">
+						<label>Vous</label>
+						<input type="text" placeholder="..." autocapitalize="off" autocorrect="off">
+					</div>
+				</div>
+
+				<a class="button button-block button-positive">Vérifier</a>
+			</section>
+
+			<!-- Translation exercise -->
+			<section id="traduire" class="content-padded segmented-controller-item">
+				<h2>to Have</h2>
+				<p>Choisis la traduction correcte</p>
+
+				<ul class="list inset">
+					<li>Boire <a class="button">Choisir</a></li>
+					<li>Manger <a class="button">Choisir</a></li>
+					<li>Avoir <a class="button">Choisir</a></li>
+					<li>Penser <a class="button">Choisir</a></li>
+				</ul>
+			</section>
+
+		</div>
+
 
 		<script src="components/ratchet/dist/ratchet.js"></script>
-
 	</body>
 </html>
