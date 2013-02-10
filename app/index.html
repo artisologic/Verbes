@@ -35,11 +35,11 @@
 		<!-- Secondary nav -->
 		<nav class="bar-standard bar-header-secondary">
 			<ul class="segmented-controller">
-				<li class="active">
+				<li>
 					<a href="#conjugation">Conjuguer</a>
 				</li>
-				<li>
-					<a href="#traduire">Traduire</a>
+				<li class="active">
+					<a href="#translation">Traduire</a>
 				</li>
 			</ul>
 		</nav>
@@ -49,13 +49,13 @@
 		<div class="content">
 
 			<!-- Conjugation exercise -->
-			<section id="conjugation" class="content-padded segmented-controller-item active">
-				<h2 data-infinitive>Infinitive</h2>
+			<section id="conjugation" class="content-padded segmented-controller-item">
+				<h2 data-infinitive>…</h2>
 				<p>Conjugues à la personne suivante</p>
 
 				<div class="input-group">
 					<div class="input-row">
-						<label data-person>Person</label>
+						<label data-person>…</label>
 						<input type="text" placeholder="..." autocapitalize="off" autocorrect="off">
 					</div>
 				</div>
@@ -64,21 +64,24 @@
 			</section>
 
 			<!-- Translation exercise -->
-			<section id="traduire" class="content-padded segmented-controller-item">
-				<h2 data-infinitive>to Have</h2>
+			<section id="translation" class="content-padded segmented-controller-item active">
+				<h2 data-infinitive>…</h2>
 				<p>Choisis la traduction correcte</p>
 
 				<ul class="list inset">
-					<li>Boire <a class="button">Choisir</a></li>
-					<li>Manger <a class="button">Choisir</a></li>
-					<li>Avoir <a class="button">Choisir</a></li>
-					<li>Penser <a class="button">Choisir</a></li>
+					<li><span data-answer>…</span><a class="button">Choisir</a></li>
+					<li><span data-answer>…</span><a class="button">Choisir</a></li>
+					<li><span data-answer>…</span><a class="button">Choisir</a></li>
+					<li><span data-answer>…</span><a class="button">Choisir</a></li>
 				</ul>
 			</section>
 		</div>
 
 		<script src="components/ratchet/dist/ratchet.js"></script>
 		<script src="scripts/data.js"></script>
+		<script src="scripts/utils.js"></script>
+		<script src="scripts/conjugation.js"></script>
+		<script src="scripts/translation.js"></script>
 		<script src="scripts/main.js"></script>
 	</body>
 </html>

@@ -12,6 +12,12 @@
 	margin-right: 0;
 }
 
-label { text-transform: capitalize; }
+label,
+.list li { text-transform: capitalize; }
 
 .error { color: #ff3333; }
+
+.list.hide-wrong-answers {
+	.button { display: none; }
+	.correct-answer { display: block; }
+}

@@ -1,3 +1,4 @@
+
 var persons = ['je', 'tu', 'il/elle/on', 'nous', 'vous', 'ils/elles'];
 var verbs = [
 	{
@@ -126,3 +127,6 @@ var verbs = [
 		conjugations: ['reçois', 'reçois', 'reçoit', 'recevons', 'recevez', 'reçoivent']
 	}
 ];
+
+var nbVerbs = verbs.length;
+var nbPersons = persons.length;
