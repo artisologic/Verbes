@@ -3,15 +3,26 @@ document.addEventListener('DOMContentLoaded', function() {
 
 	var nbVerbs = verbs.length;
 	var nbPersons = persons.length;
-	var randomVerb = '';
-	var randomPersonIndex = null;
 
-	var conjugationExercise = {
-		elements: {
-			infinitive: document.querySelector('[data-infinitive]'),
-			person: document.querySelector('[data-person]'),
-			field: document.querySelector('input'),
-			button: document.querySelector('.button')
+	var conjugationEx = {
+		elems: {
+			infinitive: document.getElementById('conjugation').querySelector('[data-infinitive]'),
+			person: document.getElementById('conjugation').querySelector('[data-person]'),
+			field: document.getElementById('conjugation').querySelector('input'),
+			button: document.getElementById('conjugation').querySelector('.button')
+		},
+		vars: {
+			randomVerb: null,
+			randomPersonIndex: null
+		}
+	};
+
+	var translationEx = {
+		elems: {
+			infinitive: document.getElementById('traduire').querySelector('[data-infinitive]')
+		},
+		vars: {
+			randomVerb: null
 		}
 	};
 
@@ -21,15 +32,15 @@ document.addEventListener('DOMContentLoaded', function() {
 
 	function attach()
 	{
-		conjugationExercise.elements.button.addEventListener('touchend', checkConjugation, false);
+		conjugationEx.elems.button.addEventListener('touchend', checkConjugation, false);
 	}
 
 	function checkConjugation()
 	{
-		//conjugationExercise.elements.field.blur();
-		var guess = conjugationExercise.elements.field.value;
+		var guess = conjugationEx.elems.field.value;
+		var vars =  conjugationEx.vars;
 
-		if(guess === randomVerb.conjugations[randomPersonIndex])
+		if(guess === vars.randomVerb.conjugations[vars.randomPersonIndex])
 		{
 			correctConjugation();
 		}
@@ -42,35 +53,50 @@ document.addEventListener('DOMContentLoaded', function() {
 	function correctConjugation()
 	{
 		console.log('correct!');
+
 		setupConjugationExercise();
 	}
 
 	function wrongConjugation(asGuess)
 	{
-		console.log('wrong! You said: ' + asGuess + ' instead of ' + randomVerb.conjugations[randomPersonIndex]);
+		var elems = conjugationEx.elems;
+		var vars  = conjugationEx.vars;
 
-		conjugationExercise.elements.button.innerText = 'Continuer';
-		conjugationExercise.elements.button.classList.remove('button-positive');
-		conjugationExercise.elements.field.value = randomVerb.conjugations[randomPersonIndex];
-		conjugationExercise.elements.field.classList.add('error');
+		console.log('wrong! You said: ' + asGuess + ' instead of ' + vars.randomVerb.conjugations[vars.randomPersonIndex]);
+
+		elems.button.innerText = 'Continuer';
+		elems.button.classList.remove('button-positive');
+		elems.field.value = vars.randomVerb.conjugations[vars.randomPersonIndex];
+		elems.field.classList.add('error');
 	}
 
 	function setupConjugationExercise()
 	{
-		randomVerb = getRandomVerb();
-		randomPersonIndex = getRandomPersonIndex();
+		var elems = conjugationEx.elems;
+		var vars  = conjugationEx.vars;
 
-		firstPersonStartsWithVowel = randomPersonIndex === 0 && ['a', 'e', 'é', 'è', 'i', 'o', 'u', 'y'].indexOf(randomVerb.conjugations[randomPersonIndex].charAt(0)) === 0;
+		vars.randomVerb = getRandomVerb();
+		vars.randomPersonIndex = getRandomPersonIndex();
 
-		conjugationExercise.elements.infinitive.innerText = randomVerb.infinitiveFr;
-		conjugationExercise.elements.person.innerText = firstPersonStartsWithVowel ? 'j\'' : persons[randomPersonIndex];
-		conjugationExercise.elements.field.value = '';
-		conjugationExercise.elements.field.classList.remove('error');
-		conjugationExercise.elements.button.innerText = 'Vérifier';
-		conjugationExercise.elements.button.classList.add('button-positive');
+		var firstPersonStartsWithVowel = vars.randomPersonIndex === 0 && ['a', 'e', 'é', 'è', 'i', 'o', 'u', 'y'].indexOf(vars.randomVerb.conjugations[vars.randomPersonIndex].charAt(0)) === 0;
+
+		elems.infinitive.innerText = vars.randomVerb.infinitiveFr;
+		elems.person.innerText = firstPersonStartsWithVowel ? 'j\'' : persons[vars.randomPersonIndex];
+		elems.field.value = '';
+		elems.field.classList.remove('error');
+		elems.button.innerText = 'Vérifier';
+		elems.button.classList.add('button-positive');
+	}
+
+	function setupTranslationExercise()
+	{
+		translationEx.vars.randomVerb = getRandomVerb();
+
+		translationEx.infinitive.innerText = translationEx.vars.randomVerb.infinitiveFr;
 	}
 
 	attach();
 	setupConjugationExercise();
+	//setupTranslationExercise();
 
 }, false );
