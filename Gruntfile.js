@@ -180,10 +180,29 @@ module.exports = function( grunt ) {
 
     min: {
       dist: ''
+    },
+
+    'sftp-deploy': {
+      build: {
+        auth: {
+          host: 'sftp.dc0.gpaas.net',
+          port: 22,
+          authKey: 'key1'
+        },
+        src: 'dist',
+        dest: '/lamp0/web/vhosts/dev.artisologic.com/htdocs/projects/verbes',
+        exclusions: ['dist/**/.DS_Store', 'dist/**/Thumbs.db', 'dist/tmp', 'dist/.htaccess', 'dist/components', 'dist/dist', 'dist/scripts', 'dist/styles', 'dist/favicon.ico']
+      }
     }
+
   });
+
+  grunt.loadNpmTasks('grunt-sftp-deploy');
 
   // Alias the `test` task to run the `mocha` task instead
   grunt.registerTask('test', 'server:phantom mocha');
+
+  // Alias the `test` task to run the `mocha` task instead
+  grunt.registerTask('deploy', 'sftp-deploy');
 
 };

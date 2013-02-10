@@ -3,3 +3,4 @@ dist
 components
 .sass-cache
 node_modules
+.ftppass
