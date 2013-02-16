@@ -1,15 +1,19 @@
+'use strict';
 
-document.addEventListener('DOMContentLoaded', function() {
+var conjugationEx = conjugationEx;
+var translationEx = translationEx;
+
+document.addEventListener('DOMContentLoaded', function () {
 
 	function attach()
 	{
-		conjugationEx.elems.button.addEventListener('touchend', checkConjugation, false);
-		translationEx.elems.list.addEventListener('touchend', checkTranslation, false);
+		conjugationEx.elems.button.addEventListener('touchend', conjugationEx.check, false);
+		translationEx.elems.list.addEventListener('touchend', translationEx.check, false);
 	}
 
 	attach();
 
-	newConjugationExercise();
-	newTranslationExercise();
+	conjugationEx.initialize();
+	translationEx.initialize();
 
-}, false );
+}, false);

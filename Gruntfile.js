@@ -223,16 +223,16 @@ module.exports = function (grunt) {
         },
 
         'sftp-deploy': {
-          build: {
-            auth: {
-              host: 'sftp.dc0.gpaas.net',
-              port: 22,
-              authKey: 'key1'
-            },
-            src: 'dist',
-            dest: '/lamp0/web/vhosts/dev.artisologic.com/htdocs/projects/verbes',
-            exclusions: ['dist/**/.DS_Store', 'dist/**/Thumbs.db', 'dist/tmp', 'dist/.htaccess', 'dist/components', 'dist/dist', 'dist/scripts', 'dist/styles', 'dist/favicon.ico']
-          }
+            build: {
+                auth: {
+                    host: 'sftp.dc0.gpaas.net',
+                    port: 22,
+                    authKey: 'key1'
+                },
+                src: 'dist',
+                dest: '/lamp0/web/vhosts/dev.artisologic.com/htdocs/projects/verbes',
+                exclusions: ['dist/**/.DS_Store', 'dist/**/Thumbs.db', 'dist/tmp', 'dist/.htaccess', 'dist/components', 'dist/dist', 'dist/scripts', 'dist/styles', 'dist/favicon.ico']
+            }
         }
     });
 
