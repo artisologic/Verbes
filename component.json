@@ -1,8 +1,8 @@
 {
   "name": "Verbes",
-  "version": "0.0.1",
-  "main": "",
+  "version": "1.0.0",
   "dependencies": {
     "ratchet": "~1.0.0"
-  }
+  },
+  "devDependencies": {}
 }
