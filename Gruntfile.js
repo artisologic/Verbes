@@ -231,7 +231,7 @@ module.exports = function (grunt) {
                 },
                 src: 'dist',
                 dest: '/lamp0/web/vhosts/dev.artisologic.com/htdocs/projects/verbes',
-                exclusions: ['dist/**/.DS_Store', 'dist/**/Thumbs.db', 'dist/tmp', 'dist/.htaccess', 'dist/components', 'dist/dist', 'dist/scripts', 'dist/styles', 'dist/favicon.ico']
+                exclusions: ['dist/**/.DS_Store', 'dist/**/Thumbs.db', 'dist/.htaccess', 'dist/scripts', 'dist/styles', 'dist/favicon.ico']
             }
         }
     });
