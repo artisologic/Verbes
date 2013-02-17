@@ -1,11 +1,9 @@
 
-.segmented-controller-item {
-	h2 {
-		margin: 2.5em 0 0em 0;
-		text-transform: capitalize;
-	}
-	p { margin-bottom: 2em; }
+.segmented-controller-item h2 {
+	margin: 2.5em 0 0em 0;
+	text-transform: capitalize;
 }
+.segmented-controller-item p { margin-bottom: 2em; }
 
 .content-padded .list.inset {
 	margin-left:  0;
@@ -17,7 +15,5 @@ label,
 
 .error { color: #ff3333; }
 
-.list.hide-wrong-answers {
-	.button { display: none; }
-	.correct-answer { display: block; }
-}
+.list.hide-wrong-answers .button { display: none; }
+.list.hide-wrong-answers .correct-answer { display: block; }
