@@ -1,0 +1,8 @@
+CACHE MANIFEST
+# version v1 @@timestamp
+
+# Explicitly cached entries
+CACHE:
+index.html
+scripts.js
+styles.css

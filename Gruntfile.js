@@ -212,7 +212,8 @@ module.exports = function (grunt) {
                     dest: '<%= yeoman.dist %>',
                     src: [
                         '*.{ico,txt,png}',
-                        '.htaccess'
+                        '.htaccess',
+                        '*.manifest'
                     ]
                 }]
             }
@@ -232,6 +233,19 @@ module.exports = function (grunt) {
                 src: 'dist',
                 dest: '/lamp0/web/vhosts/dev.artisologic.com/htdocs/projects/verbes',
                 exclusions: ['dist/**/.DS_Store', 'dist/**/Thumbs.db', 'dist/.htaccess', 'dist/scripts', 'dist/styles', 'dist/favicon.ico']
+            }
+        },
+
+        replace: {
+            dist: {
+                options: {
+                    variables: {
+                        'timestamp': '<%= new Date().getTime() %>'
+                    }
+                },
+                files: {
+                    'dist/cache.manifest': ['app/cache.manifest']
+                }
             }
         }
     });
@@ -282,6 +296,8 @@ module.exports = function (grunt) {
     ]);
 
     grunt.registerTask('default', ['build']);
+
+    // Extra tasks
 
     // Deploy task
     grunt.loadNpmTasks('grunt-sftp-deploy');
